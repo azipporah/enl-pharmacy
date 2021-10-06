@@ -1,4 +1,5 @@
 <?php include "main/include.php"; ?>
+<?php include "main/code.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 

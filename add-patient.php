@@ -32,7 +32,7 @@ echo $Error;
 						<form action="#" method="post">
 							<div class="col-xs-12 row">
 								<div class="form-group col-sm-6">
-									<label class="form-label" for="add-name">Name</label>
+									<label class="form-label" for="add-name">Patient Name</label>
 									<input type="text" class="form-control" id="add-name" name="pname">
 								</div>
 								<div class="form-group col-sm-6">
