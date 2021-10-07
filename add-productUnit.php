@@ -3,11 +3,13 @@
 <!--**********************************
             Content body start
         ***********************************-->
-<?php
-echo $Error;
-?>
+
 <div class="content-body">
 	<!-- row -->
+	<?php
+echo $Error;
+echo $New;
+?>
 	<div class="container-fluid">
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
@@ -30,11 +32,7 @@ echo $Error;
 					</div>
 					<div class="card-body">
 						<form action="#" method="post">
-							<div class="col-xs-12 row">
-                            	<div class="form-group col-sm-6">
-									<label class="form-label" for="add-date">Product name</label>
-									<input type="text" class="form-control" id="add-p-name" name="p-name">
-								</div>
+							<div class="col-xs-12 row">                            	
                                 <div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Product Unit</label>
 									<input type="text" class="form-control" id="add-unit" name="unit">

@@ -3,11 +3,13 @@
 <!--**********************************
             Content body start
         ***********************************-->
-<?php
-echo $Error;
-?>
+
 <div class="content-body">
 	<!-- row -->
+	<?php
+	echo $Error;
+	echo $New;
+	?>
 	<div class="container-fluid">
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
@@ -31,33 +33,55 @@ echo $Error;
 					<div class="card-body">
 						<form action="#" method="post">
 							<div class="col-xs-12 row">
-                                <div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Patient name</label>
-									<input type="text" class="form-control" id="add-p-name" name="p-name">
+									<select class="form-control" name="pname">
+										<option value="">Select</option>
+										<?php
+										include 'config/connect.php';
+										$get_pname = mysqli_query($connect, "SELECT * FROM `patient` WHERE 1");
+										while ($pname_fetch = mysqli_fetch_assoc($get_pname)) {
+										?>
+											<option value="<?php echo $pname_fetch['patient_id']; ?>">
+												<?php echo ucwords(strtolower($pname_fetch['patient_name'])); ?>
+											</option>
+										<?php } ?>
+									</select>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Product name</label>
-									<input type="text" class="form-control" id="add-p-name" name="p-name">
-								</div>                                
+									<select class="form-control" name="p-name">
+										<option value="">Select</option>
+										<?php
+										include 'config/connect.php';
+										$get_product = mysqli_query($connect, "SELECT * FROM `product` WHERE 1");
+										while ($product_fetch = mysqli_fetch_assoc($get_product)) {
+										?>
+											<option value="<?php echo $product_fetch['product_id']; ?>">
+												<?php echo ucwords(strtolower($product_fetch['product_name'])); ?>
+											</option>
+										<?php } ?>
+									</select>
+								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Start date</label>
 									<input type="date" id="add-date" name="start-date" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
 								</div>
-                                <div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">End date</label>
 									<input type="date" id="add-date" name="end-date" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
 								</div>
-                                <div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-tstatus">Treatment status</label>
 									<select class="form-control" name="t-status">
 										<option></option>
 										<option>On-going</option>
 										<option>Completed</option>
 									</select>
-								</div>                                
+								</div>
 							</div>
 							<div class="col-xs-12">
-								<button type="submit" class="btn btn-primary" name="save-product">Save</button>
+								<button type="submit" class="btn btn-primary" name="save-treatment">Save</button>
 								<button type="button" class="btn" name="cancel">Cancel</button>
 							</div>
 						</form>

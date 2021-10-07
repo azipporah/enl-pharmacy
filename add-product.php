@@ -3,11 +3,13 @@
 <!--**********************************
             Content body start
         ***********************************-->
-<?php
-echo $Error;
-?>
+
 <div class="content-body">
 	<!-- row -->
+	<?php
+	echo $Error;
+	echo $New;
+	?>
 	<div class="container-fluid">
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
@@ -35,31 +37,68 @@ echo $Error;
 									<label class="form-label" for="add-name">Product name</label>
 									<input type="text" class="form-control" id="add-p-name" name="p-name">
 								</div>
-                                <div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Product category</label>
-									<input type="text" class="form-control" id="add-p-category" name="p-category">
+									<select class="form-control" name="p-category">                                        
+									<option value="" >Select</option>
+                                        <?php
+                                            include 'config/connect.php';
+                                            $get_pcat = mysqli_query($connect, "SELECT * FROM `productcategory` WHERE 1");
+                                            while($pcat_fetch = mysqli_fetch_assoc($get_pcat)) {
+                                            ?>
+                                            <option value="<?php echo $pcat_fetch['productCategory_id']; ?>"  >
+                                            <?php echo ucwords(strtolower($pcat_fetch['productCategory_name'])); ?>
+                                            </option>
+                                            <?php } ?> 
+                                    </select>
 								</div>
-                                <div class="form-group col-sm-6">
-									<label class="form-label" for="add-name">Product unit</label>
-									<input type="text" class="form-control" id="add-p-unit" name="p-unit">
+								<div class="form-group col-sm-6">
+									<label class="form-label" for="add-name">Product unit</label> 
+									<select class="form-control" name="p-unit">                                        
+									<option value="" >Select</option>
+                                        <?php
+                                            include 'config/connect.php';
+                                            $get_punit = mysqli_query($connect, "SELECT * FROM `productunit` WHERE 1");
+                                            while($punit_fetch = mysqli_fetch_assoc($get_punit)) {
+                                            ?>
+                                            <option value="<?php echo $punit_fetch['productUnit_id']; ?>"  >
+                                            <?php echo ucwords(strtolower($punit_fetch['productUnit_name'])); ?>
+                                            </option>
+                                            <?php } ?> 
+                                    </select>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Expiry date</label>
-									<input type="date" id="add-date" name="dob" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
+									<input type="date" id="add-date" name="xdate" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
 								</div>
-                                <div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Cost Price</label>
 									<input type="text" class="form-control" id="add-cprice" name="cprice">
 								</div>
-                                <div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Selling price</label>
 									<input type="text" class="form-control" id="add-sprice" name="sprice">
 								</div>
-                                <div class="form-group col-sm-6">
-									<label class="form-label" for="add-name">Dosage & Description</label>
-									<input type="text-area" class="form-control" id="add-dd" name="dd">
+								<div class="form-group col-sm-6">
+									<label class="form-label" for="add-name">Dosage</label>
+									<select class="form-control" name="dose">                                        
+									<option value="" >Select</option>
+                                        <?php
+                                            include 'config/connect.php';
+                                            $get_dose = mysqli_query($connect, "SELECT * FROM `dosage` WHERE 1");
+                                            while($dose_fetch = mysqli_fetch_assoc($get_dose)) {
+                                            ?>
+                                            <option value="<?php echo $dose_fetch['dosage_id']; ?>"  >
+                                            <?php echo ucwords(strtolower($dose_fetch['dosage_name'])); ?>
+                                            </option>
+                                            <?php } ?> 
+                                    </select>
 								</div>
-                                <div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
+									<label class="form-label" for="add-name">Description</label>
+									<input type="text-area" class="form-control" id="add-desc" name="desc">
+								</div>
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Manufacturer</label>
 									<input type="text" class="form-control" id="add-manu" name="manu">
 								</div>

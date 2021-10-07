@@ -3,11 +3,13 @@
 <!--**********************************
             Content body start
         ***********************************-->
-<?php
-echo $Error;
-?>
+
 <div class="content-body">
 	<!-- row -->
+	<?php
+	echo $Error;
+	echo $New;
+	?>
 	<div class="container-fluid">
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
@@ -71,18 +73,19 @@ echo $Error;
 										<option></option>
 										<option>Male</option>
 										<option>Female</option>
-                                        <option></option>
+										<option></option>
 										<option>Male</option>
 										<option>Female</option>
 									</select>
 								</div>
-                                <div class="form-group col-sm-6">
-											<label class="form-label" for="add-brief">Description</label>
-											<textarea class="form-control" cols="5" id="add-escription" name="pdescription"></textarea>										</div>
+								<div class="form-group col-sm-6">
+									<label class="form-label" for="add-brief">Description</label>
+									<textarea class="form-control" cols="5" id="add-escription" name="pdescription"></textarea>
+								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Date of Entry</label>
 									<input type="date" id="add-date" name="pdoe" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
-								</div>							
+								</div>
 							</div>
 							<div class="col-xs-12">
 								<button type="submit" class="btn btn-primary" name="save-patient">Save</button>

@@ -3,11 +3,13 @@
 <!--**********************************
             Content body start
         ***********************************-->
-<?php
-echo $Error;
-?>
+
 <div class="content-body">
 	<!-- row -->
+	<?php
+	echo $Error;
+	echo $New;
+	?>
 	<div class="container-fluid">
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
@@ -31,18 +33,29 @@ echo $Error;
 					<div class="card-body">
 						<form action="#" method="post">
 							<div class="col-xs-12 row">
-                            	<div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Patient name</label>
-									<input type="text" class="form-control" id="add-pname" name="pname">
+									<select class="form-control" name="pname">
+										<option value="">Select</option>
+										<?php
+										include 'config/connect.php';
+										$get_pname = mysqli_query($connect, "SELECT * FROM `patient` WHERE 1");
+										while ($pname_fetch = mysqli_fetch_assoc($get_pname)) {
+										?>
+											<option value="<?php echo $pname_fetch['patient_id']; ?>">
+												<?php echo ucwords(strtolower($pname_fetch['patient_name'])); ?>
+											</option>
+										<?php } ?>
+									</select>
 								</div>
-                                <div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Date of Appointment</label>
 									<input type="date" id="add-date" name="doa" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
 								</div>
-                                
+
 							</div>
 							<div class="col-xs-12">
-								<button type="submit" class="btn btn-primary" name="save-punit">Save</button>
+								<button type="submit" class="btn btn-primary" name="save-appointment">Save</button>
 								<button type="button" class="btn" name="cancel">Cancel</button>
 							</div>
 						</form>

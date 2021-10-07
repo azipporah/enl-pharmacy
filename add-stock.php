@@ -3,11 +3,13 @@
 <!--**********************************
             Content body start
         ***********************************-->
-<?php
-echo $Error;
-?>
+
 <div class="content-body">
 	<!-- row -->
+	<?php
+	echo $Error;
+	echo $New;
+	?>
 	<div class="container-fluid">
 		<div class="row page-titles mx-0">
 			<div class="col-sm-6 p-md-0">
@@ -31,29 +33,73 @@ echo $Error;
 					<div class="card-body">
 						<form action="#" method="post">
 							<div class="col-xs-12 row">
-                                <div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Employee name</label>
-									<input type="text" class="form-control" id="add-ename" name="ename">
+									<select class="form-control" name="ename">                                        
+									<option value="" >Select</option>
+                                        <?php
+                                            include 'config/connect.php';
+                                            $get_emp = mysqli_query($connect, "SELECT * FROM `employee` WHERE 1");
+                                            while($emp_fetch = mysqli_fetch_assoc($get_emp)) {
+                                            ?>
+                                            <option value="<?php echo $emp_fetch['employee_id']; ?>"  >
+                                            <?php echo ucwords(strtolower($emp_fetch['employee_name'])); ?>
+                                            </option>
+                                            <?php } ?> 
+                                    </select>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Product name</label>
-									<input type="text" class="form-control" id="add-p-name" name="p-name">
+									<select class="form-control" name="p-name">                                        
+									<option value="" >Select</option>
+                                        <?php
+                                            include 'config/connect.php';
+                                            $get_pName = mysqli_query($connect, "SELECT * FROM `product` WHERE 1");
+                                            while($pName_fetch = mysqli_fetch_assoc($get_pName)) {
+                                            ?>
+                                            <option value="<?php echo $pName_fetch['product_id']; ?>"  >
+                                            <?php echo ucwords(strtolower($pName_fetch['product_name'])); ?>
+                                            </option>
+                                            <?php } ?> 
+                                    </select>
 								</div>
-                                <div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Product Category</label>
-									<input type="text" class="form-control" id="add-pcategory" name="p-category">
+									<select class="form-control" name="p-category">                                        
+									<option value="" >Select</option>
+                                        <?php
+                                            include 'config/connect.php';
+                                            $get_pcat = mysqli_query($connect, "SELECT * FROM `productcategory` WHERE 1");
+                                            while($pcat_fetch = mysqli_fetch_assoc($get_pcat)) {
+                                            ?>
+                                            <option value="<?php echo $pcat_fetch['productCategory_id']; ?>"  >
+                                            <?php echo ucwords(strtolower($pcat_fetch['productCategory_name'])); ?>
+                                            </option>
+                                            <?php } ?> 
+                                    </select>
 								</div>
-                                <div class="form-group col-sm-6">
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Product Unit</label>
-									<input type="text" class="form-control" id="add-punit" name="p-unit">
+									<select class="form-control" name="p-unit">                                        
+									<option value="" >Select</option>
+                                        <?php
+                                            include 'config/connect.php';
+                                            $get_punit = mysqli_query($connect, "SELECT * FROM `productunit` WHERE 1");
+                                            while($punit_fetch = mysqli_fetch_assoc($get_punit)) {
+                                            ?>
+                                            <option value="<?php echo $punit_fetch['productUnit_id']; ?>"  >
+                                            <?php echo ucwords(strtolower($punit_fetch['productUnit_name'])); ?>
+                                            </option>
+                                            <?php } ?> 
+                                    </select>
+								</div>
+								<div class="form-group col-sm-6">
+									<label class="form-label" for="add-name">Stock quantity</label>
+									<input type="text" class="form-control" id="add-stockqnty" name="stock-qnty">
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Stock expiry date</label>
 									<input type="date" id="add-date" name="stock-expiry" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
-								</div>
-                                <div class="form-group col-sm-6">
-									<label class="form-label" for="add-name">Stock quantity</label>
-									<input type="text" class="form-control" id="add-stockqnty" name="stock-qnty">
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Stock Description</label>
