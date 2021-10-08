@@ -47,7 +47,7 @@
 	<!-- Svganimation scripts -->
     <script src="vendor/svganimation/vivus.min.js"></script>
     <script src="vendor/svganimation/svg.animation.js"></script>
-	
+
 </body>
 
 <!-- Mirrored from medico.dexignzone.com/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 May 2021 13:24:00 GMT -->
