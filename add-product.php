@@ -1,5 +1,7 @@
-<?php include "assets/header.php"; ?>
-
+<?php 
+include "assets/header.php";
+include "main/include.php";
+?>
 <!--**********************************
             Content body start
         ***********************************-->
@@ -67,12 +69,13 @@
                                             <?php } ?> 
                                     </select>
 								</div>
+								
 								<div class="form-group col-sm-6">
-									<label class="form-label" for="add-date">Expiry date</label>
-									<input type="date" id="add-date" name="xdate" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
+									<label class="form-label" for="add-qnty">Unit price</label>
+									<input type="text" class="form-control" id="add-qnty" name="unit-price">
 								</div>
 								<div class="form-group col-sm-6">
-									<label class="form-label" for="add-name">Cost Price</label>
+									<label class="form-label" for="add-name">Cost price</label>
 									<input type="text" class="form-control" id="add-cprice" name="cprice">
 								</div>
 								<div class="form-group col-sm-6">
@@ -93,6 +96,10 @@
                                             </option>
                                             <?php } ?> 
                                     </select>
+								</div>
+								<div class="form-group col-sm-6">
+									<label class="form-label" for="add-date">Expiry date</label>
+									<input type="date" id="add-date" name="xdate" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Description</label>

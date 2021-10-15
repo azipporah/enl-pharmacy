@@ -1,11 +1,11 @@
 <?php 
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $user = "root";
+    $pass = "";
     $dbname = "earth_db";
 
-    $connect = mysqli_connect($servername, $username, $password, $dbname);
-    echo "Connected to DB";
+    $connect = mysqli_connect($servername, $user, $pass, $dbname);
+    
     if(!$connect) {
         die ("DB connection failed:" . mysqli_connect_error());
     }

@@ -1,10 +1,5 @@
 <?php include "assets/header.php"; ?>
-<?php
-include "config/connect.php";
-$productCategory = "SELECT * FROM `productcategory` WHERE 1";
 
-$execute_productCategory = mysqli_query($connect, $productCategory);
-?>
 
 <div class="content-body">
     <div class="container-fluid">
@@ -47,8 +42,9 @@ $execute_productCategory = mysqli_query($connect, $productCategory);
                                         <td><?php echo $show_productCategory['productCategory_name']; ?></td>
                                         <td><?php echo $show_productCategory['created_at']; ?></td>
                                         <td>
-                                            <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i></button>
-                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            <a href="?delete=<?php echo $rows['productCategory_id']; ?>"><button type="submit" class="btn btn-danger"><i class="" ></i></button></a>
+                                            <button type="submit" class="btn btn-primary"><i class="fa fa-edit" href="?update=<?php echo $rows['productCategory_id']; ?>"></i></button>
+                                            
                                         </td>
 
                                     </tr>

@@ -1,5 +1,7 @@
-<?php include "assets/header.php"; ?>
-
+<?php 
+include "assets/header.php";
+include "main/include.php";
+?>
 <!--**********************************
             Content body start
         ***********************************-->

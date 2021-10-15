@@ -1,4 +1,7 @@
-<?php include "assets/header.php"; ?>
+<?php 
+include "assets/header.php";
+include "main/include.php";
+?>
 
 <!--**********************************
             Content body start
@@ -43,7 +46,7 @@
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-gender">Gender</label>
-									<select class="form-control" name="gender">
+									<select class="form-control" name="pgender">
 										<option></option>
 										<option>Male</option>
 										<option>Female</option>
@@ -58,7 +61,7 @@
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-email">Email</label>
 									<div class="controls">
-										<input type="text" class="form-control" id="add-email" name="email">
+										<input type="email" class="form-control" id="add-email" name="email">
 									</div>
 								</div>
 								<div class="form-group col-sm-6">

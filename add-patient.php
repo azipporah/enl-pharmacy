@@ -1,4 +1,7 @@
-<?php include "assets/header.php"; ?>
+<?php 
+include "assets/header.php";
+include "main/include.php";
+?>
 
 <!--**********************************
             Content body start
@@ -7,7 +10,7 @@
 <div class="content-body">
 	<!-- row -->
 	<?php
-	echo $Error;
+	// echo $Error;
 	echo $New;
 	?>
 	<div class="container-fluid">
@@ -31,19 +34,19 @@
 						<h5 class="card-title">Basic Info</h5>
 					</div>
 					<div class="card-body">
-						<form action="#" method="post">
+						<form action="#" method="POST">
 							<div class="col-xs-12 row">
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Patient Name</label>
-									<input type="text" class="form-control" id="add-name" name="pname">
+									<input type="text" class="form-control" id="add-name" name="patient_name">
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Date of Birth</label>
-									<input type="date" id="add-date" name="pdob" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
+									<input type="date" id="add-date" name="patient_dateOfBirth" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-gender">Gender</label>
-									<select class="form-control" name="pgender">
+									<select class="form-control" name="patient_gender">
 										<option></option>
 										<option>Male</option>
 										<option>Female</option>
@@ -52,39 +55,39 @@
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-contact">Contact</label>
 									<div class="controls">
-										<input type="text" class="form-control" id="add-contact" name="pcontact">
+										<input type="text" class="form-control" id="add-contact" name="patient_contact">
 									</div>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-email">Email</label>
 									<div class="controls">
-										<input type="text" class="form-control" id="add-email" name="pemail">
+										<input type="text" class="form-control" id="add-email" name="patient_email">
 									</div>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-address">Address</label>
 									<div class="controls">
-										<input type="text" class="form-control" id="add-address" name="paddress">
+										<input type="text" class="form-control" id="add-address" name="patient_address">
 									</div>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-disease">Disease</label>
-									<select class="form-control" name="pdisease">
+									<select class="form-control" name="patient_disease">
 										<option></option>
-										<option>Male</option>
-										<option>Female</option>
-										<option></option>
-										<option>Male</option>
-										<option>Female</option>
+										<option> dfsdf sd</option>
+										<option> dffsdfsf</option>
+										<option>dx fdssdf</option>
+										<option> xfsdf s d</option>
+										<option> fdssfsf f</option>
 									</select>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-brief">Description</label>
-									<textarea class="form-control" cols="5" id="add-escription" name="pdescription"></textarea>
+									<textarea class="form-control" cols="5" id="add-escription" name="patient_description"></textarea>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Date of Entry</label>
-									<input type="date" id="add-date" name="pdoe" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
+									<input type="date" id="add-date" name="patient_dateOfEntry" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
 								</div>
 							</div>
 							<div class="col-xs-12">
