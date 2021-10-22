@@ -1,6 +1,6 @@
 <?php 
 include "assets/header.php";
-include "main/include.php";
+// include "main/include.php";
 ?>
 
 <!--**********************************
@@ -38,15 +38,15 @@ include "main/include.php";
 							<div class="col-xs-12 row">
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Name</label>
-									<input type="text" class="form-control" id="add-name" name="name">
+									<input type="text" class="form-control" id="add-name" name="name" required>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Date of Birth</label>
-									<input type="date" id="add-date" name="dob" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
+									<input type="date" id="add-date" name="dob" class="form-control datepicker" data-format="mm/dd/yyyy" value="" required>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-gender">Gender</label>
-									<select class="form-control" name="pgender">
+									<select class="form-control" name="pgender" required>
 										<option></option>
 										<option>Male</option>
 										<option>Female</option>
@@ -55,29 +55,29 @@ include "main/include.php";
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-contact">Contact</label>
 									<div class="controls">
-										<input type="text" class="form-control" id="add-contact" name="contact">
+										<input type="text" class="form-control" id="add-contact" name="contact" required>
 									</div>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-email">Email</label>
 									<div class="controls">
-										<input type="email" class="form-control" id="add-email" name="email">
+										<input type="email" class="form-control" id="add-email" name="email" required>
 									</div>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-address">Address</label>
 									<div class="controls">
-										<input type="text" class="form-control" id="add-address" name="address">
+										<input type="text" class="form-control" id="add-address" name="address" required>
 									</div>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Date of Entry</label>
-									<input type="date" id="add-date" name="doe" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
+									<input type="date" id="add-date" name="doe" class="form-control datepicker" data-format="mm/dd/yyyy" value="" required>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-password">Password</label>
 									<div class="controls">
-										<input type="password" class="form-control" id="add-password" name="password">
+										<input type="password" class="form-control" id="add-password" name="password" required>
 									</div>
 								</div>
 
@@ -85,7 +85,7 @@ include "main/include.php";
 							</div>
 							<div class="col-xs-12">
 								<button type="submit" class="btn btn-primary" name="save-employee">Save</button>
-								<button type="button" class="btn" name="cancel">Cancel</button>
+								<!-- <button type="button" class="btn" name="cancel">Cancel</button> -->
 							</div>
 						</form>
 					</div>

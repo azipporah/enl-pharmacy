@@ -1,6 +1,6 @@
 <?php 
 include "assets/header.php";
-include "main/include.php";
+// include "main/include.php";
 ?>
 <!--**********************************
             Content body start
@@ -69,11 +69,6 @@ include "main/include.php";
                                             <?php } ?> 
                                     </select>
 								</div>
-								
-								<div class="form-group col-sm-6">
-									<label class="form-label" for="add-qnty">Unit price</label>
-									<input type="text" class="form-control" id="add-qnty" name="unit-price">
-								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Cost price</label>
 									<input type="text" class="form-control" id="add-cprice" name="cprice">
@@ -112,7 +107,7 @@ include "main/include.php";
 							</div>
 							<div class="col-xs-12">
 								<button type="submit" class="btn btn-primary" name="save-product">Save</button>
-								<button type="button" class="btn" name="cancel">Cancel</button>
+								<!-- <button type="button" class="btn" name="cancel">Cancel</button> -->
 							</div>
 						</form>
 					</div>

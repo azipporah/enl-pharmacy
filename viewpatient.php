@@ -1,4 +1,7 @@
-<?php include "assets/header.php"; ?>
+<?php 
+include "assets/header.php";
+include "main/include.php";
+?>
 
         <!--**********************************
             Content body start
@@ -23,8 +26,9 @@
                 </div>
                 <!-- row -->
                      <?php
-  include 'config/connect.php';
 
+                     include 'config/connect.php';
+  
   // Updating 
   if (isset($_REQUEST['update'])){
 // echo "updating successful";
@@ -35,21 +39,20 @@
 
 if(isset($_POST['update-record'])){
   //echo working
- @$patient_id=$_POST['patient_id'];
+//   $patient_id=$_POST['patient_id'];
   $patient_name=$_POST['patient_name'];
-  @$patient_name=$_POST['patient_address'];
   $patient_dateOfBirth=$_POST['patient_dateOfBirth'];
   $patient_gender=$_POST['patient_gender'];
   $patient_contact=$_POST['patient_contact'];
   $patient_email=$_POST['patient_email'];
-  @$patient_address=$_POST['patient_address'];
+  $patient_address=$_POST['patient_address'];
   $patient_disease=$_POST['patient_disease'];
   $patient_description=$_POST['patient_description'];
   $patient_dateOfEntry=$_POST['patient_dateOfEntry'];
   
   
 
-  $sql_insert="UPDATE `patient` SET patient_name='$patient_name',`patient_gender`='patient_gender',`patient_disease`='$patient_disease',`patient_address`='$patient_address',`patient_contact`='$patient_contact',`patient_email`='$patient_email',`patient_dateOfBirth`='$patient_dateOfBirth',`patient_dateOfEntry`=patient_dateOfEntry,`patient_description`='patient_description' WHERE patient_id='$patient_id'";
+  $sql_insert="UPDATE patient SET patient_name='$patient_name',patient_gender='$patient_gender',patient_disease='$patient_disease',patient_address='$patient_address',patient_contact='$patient_contact',patient_email='$patient_email',patient_dateOfBirth='$patient_dateOfBirth',patient_dateOfEntry='$patient_dateOfEntry',patient_description='$patient_description' WHERE patient_id='$patient_id'";
   $sql_query=mysqli_query($connect,$sql_insert);
   if ($sql_query==TRUE) {
     echo " updated successful";
@@ -73,7 +76,6 @@ if(isset($_POST['update-record'])){
                                 <div class="form-group col-sm-6">
                                     <label class="form-label" for="add-gender">Gender</label>
                                     <select class="form-control" name="patient_gender">
-                                        <option></option>
                                         <option>Male</option>
                                         <option>Female</option>
                                     </select>
@@ -93,18 +95,18 @@ if(isset($_POST['update-record'])){
                                 <div class="form-group col-sm-6">
                                     <label class="form-label" for="add-address">Address</label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" id="add-address" name="paddress">
+                                        <input type="text" class="form-control" id="add-address" name="patient_address">
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="form-label" for="add-disease">Disease</label>
                                     <select class="form-control" name="patient_disease">
                                         <option></option>
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                        <option></option>
-                                        <option>Male</option>
-                                        <option>Female</option>
+                                        <option>vdadfsdaf f</option>
+                                        <option> adf dsfds</option>
+                                        <option>sad ffdasff</option>
+                                        <option>asfdf dfd </option>
+                                        <option>asdf adssdf</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-6">
@@ -117,7 +119,7 @@ if(isset($_POST['update-record'])){
                             </div>
                             <div class="col-xs-12">
                                 <button type="submit" class="btn btn-primary" name="update-record">Save Changes</button>
-                                <button type="button" class="btn" name="cancel">Cancel</button>
+                            
                             </div>
                         </form>
 
@@ -136,6 +138,7 @@ if(isset($_POST['update-record'])){
   }
 }
   // retrieving data
+//   $sql_fetch=" SELECT sales.employee_id,product.product_name,productunit.productUnit_name,sales.quantity,sales.total_amount,sales.paid_amount,sales.remaining_amount,sales.dateOfSale from product join sales on product.product_id = sales.product_id join productunit on productunit.productUnit_id = sales.productUnit_id";
 $sql_fetch="SELECT * FROM patient";
 $sql_query=mysqli_query($connect, $sql_fetch);
 
@@ -146,10 +149,11 @@ $sql_query=mysqli_query($connect, $sql_fetch);
                                                 <th>Id</th>
                                                 <th>Name</th>
                                                 <th>Gender</th>
+                                                <th>Disease</th>
                                                 <th>Address</th>
                                                 <th>Contact</th>
                                                 <th>Email</th>
-                                                 <th>DOB</th>
+                                                <th>DOB</th>
                                                 <th>Entry Date</th>
                                                 <th>Description</th>
                                                 <th>Delete</td>
@@ -164,17 +168,18 @@ $sql_query=mysqli_query($connect, $sql_fetch);
  ?>
    
     <tr>
-     <td><?php echo $rows['patient_id'];?></td>
-    <td><span class="badge badge-primary"></span><?php echo $rows['patient_name'];?> </td>
+    <td><?php echo $rows['patient_id'];?></td>
+    <td><?php echo $rows['patient_name'];?> </td>
     <td><?php echo $rows['patient_gender'];?></td>
+    <td><?php echo $rows['patient_disease'];?></td>
     <td><?php echo $rows['patient_address'];?></td>
-     <td><?php echo $rows['patient_contact'];?></td>
-    <td><span class="badge badge-primary"><?php echo $rows['patient_email'];?></span> </td>
+    <td><?php echo $rows['patient_contact'];?></td>
+    <td><?php echo $rows['patient_email'];?></td>
     <td><?php echo $rows['patient_dateOfBirth'];?></td>
-     <td><?php echo $rows['patient_dateOfEntry'];?></td>
-    <td><span class="badge badge-primary"><?php echo $rows['patient_description'];?></span> </td>
-     <td><a href="?delete=<?php echo $rows['patient_id'];?>">Delete</a></td>
-    <td><a href="?update=<?php echo $rows['patient_id'];?>">Update</a></td>
+    <td><?php echo $rows['patient_dateOfEntry'];?></td>
+    <td><?php echo $rows['patient_description'];?></td>
+    <td><a href="?delete=<?php echo $rows['patient_id'];?>" class="badge badge-danger">Delete</a></td>
+    <td><a href="?update=<?php echo $rows['patient_id'];?>" class="badge badge-primary">Update</a></td>
     </tr>
                                     
    
@@ -248,7 +253,7 @@ $sql_query=mysqli_query($connect, $sql_fetch);
 </table>
  <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">DexignZone</a> 2020</p>
+            <p>Copyright © Designed &amp; Developed by Computing Palace Technologies 2021</p>
             </div>
         </div>
 </body>

@@ -37,19 +37,16 @@
 
             if (isset($_POST['update-record'])) {
                 //echo working
-                @$employee_name =$_POST['employee_name'];
+                $employee_name =$_POST['employee_name'];
                 $employee_dateOfBirth = $_POST['employee_dateOfBirth'];
                 $employee_gender = $_POST['employee_gender'];
                 $employee_contact = $_POST['employee_contact'];
                 $employee_email = $_POST['employee_email'];
+                $employee_password = $_POST['employee_password'];
                 $Address = $_POST['Address'];
                 $employee_dateOfEntry = $_POST['employee_dateOfEntry'];
         
-
-
- 
-
-                $sql_insert = "UPDATE employee SET employee_name='$employee_name',employee_gender='employee_gender',employee_dateOfBirth='$employee_dateOfBirth',employee_contact='$employee_contact',employee_email='$employee_email',Address='$Address',employee_password='$Address',employee_dateOfEntry='$employee_dateOfEntry' WHERE employee_id='$employee_id' ";
+                $sql_insert = "UPDATE employee SET employee_name='$employee_name',employee_gender='$employee_gender',employee_dateOfBirth='$employee_dateOfBirth',employee_contact='$employee_contact',employee_email='$employee_email',Address='$Address',employee_password='$employee_password',employee_dateOfEntry='$employee_dateOfEntry' WHERE employee_id='$employee_id' ";
                 $sql_query = mysqli_query($connect, $sql_insert);
                 if ($sql_query == TRUE) {
                     echo " updated successful";
@@ -62,7 +59,7 @@
                 <div class="col-xs-12 row">
                     <div class="form-group col-sm-6">
                         <label class="form-label" for="add-name">Name</label>
-                        <input type="text" class="form-control" id="add-name" name="name">
+                        <input type="text" class="form-control" id="add-name" name="employee_name">
                     </div>
                     <div class="form-group col-sm-6">
                         <label class="form-label" for="add-date">Date of Birth</label>
@@ -158,16 +155,16 @@ $sql_query=mysqli_query($connect, $sql_fetch);
    
     <tr>
      <td><?php echo $rows['employee_id'];?></td>
-    <td><span class="badge badge-primary"></span><?php echo $rows['employee_name'];?> </td>
+    <td><?php echo $rows['employee_name'];?> </td>
     <td><?php echo $rows['employee_dateOfBirth'];?></td>
      <td><?php echo $rows['employee_gender'];?></td>
-    <td><span class="badge badge-primary"><?php echo $rows['employee_contact'];?></span> </td>
+    <td><span ><?php echo $rows['employee_contact'];?></span> </td>
     <td><?php echo $rows['employee_email'];?></td>
     <td><?php echo $rows['Address'];?></td>
      <td><?php echo $rows['employee_dateOfEntry'];?></td>
       <td><?php echo $rows['employee_password'];?></td>
-     <td><a href="?delete=<?php echo $rows['employee_id'];?>">Delete</a></td>
-    <td><a href="?update=<?php echo $rows['employee_id'];?>">Update</a></td>
+     <td><a href="?delete=<?php echo $rows['employee_id'];?>" class="badge badge-danger">Delete</a></td>
+    <td><a href="?update=<?php echo $rows['employee_id'];?>" class="badge badge-primary">Update</a></td>
     </tr>
                                     
    
@@ -241,7 +238,7 @@ $sql_query=mysqli_query($connect, $sql_fetch);
 </table>
  <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">DexignZone</a> 2020</p>
+            <p>Copyright © Designed &amp; Developed by Computing Palace Technologies 2021</p>
             </div>
         </div>
 </body>

@@ -1,6 +1,6 @@
 <?php 
 include "assets/header.php";
-include "main/include.php";
+// include "main/include.php";
 ?>
 
 <!--**********************************
@@ -38,15 +38,15 @@ include "main/include.php";
 							<div class="col-xs-12 row">
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Patient Name</label>
-									<input type="text" class="form-control" id="add-name" name="patient_name">
+									<input type="text" class="form-control" id="add-name" name="patient_name" required>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Date of Birth</label>
-									<input type="date" id="add-date" name="patient_dateOfBirth" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
+									<input type="date" id="add-date" name="patient_dateOfBirth" class="form-control datepicker" data-format="mm/dd/yyyy" value="" required>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-gender">Gender</label>
-									<select class="form-control" name="patient_gender">
+									<select class="form-control" name="patient_gender" required>
 										<option></option>
 										<option>Male</option>
 										<option>Female</option>
@@ -55,13 +55,13 @@ include "main/include.php";
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-contact">Contact</label>
 									<div class="controls">
-										<input type="text" class="form-control" id="add-contact" name="patient_contact">
+										<input type="text" class="form-control" id="add-contact" name="patient_contact" required>
 									</div>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-email">Email</label>
 									<div class="controls">
-										<input type="text" class="form-control" id="add-email" name="patient_email">
+										<input type="text" class="form-control" id="add-email" name="patient_email" required>
 									</div>
 								</div>
 								<div class="form-group col-sm-6">
@@ -71,15 +71,19 @@ include "main/include.php";
 									</div>
 								</div>
 								<div class="form-group col-sm-6">
-									<label class="form-label" for="add-disease">Disease</label>
-									<select class="form-control" name="patient_disease">
-										<option></option>
-										<option> dfsdf sd</option>
-										<option> dffsdfsf</option>
-										<option>dx fdssdf</option>
-										<option> xfsdf s d</option>
-										<option> fdssfsf f</option>
-									</select>
+									<label class="form-label" for="add-name">Patient disease</label>
+									<select class="form-control" name="patient_disease">                                        
+									<option value="" >Select</option>
+                                        <?php
+                                            include 'config/connect.php';
+                                            $get_disease = mysqli_query($connect, "SELECT * FROM `disease` WHERE 1");
+                                            while($disease_fetch = mysqli_fetch_assoc($get_disease)) {
+                                            ?>
+                                            <option value="<?php echo $disease_fetch['disease_id']; ?>"  >
+                                            <?php echo ucwords(strtolower($disease_fetch['disease_name'])); ?>
+                                            </option>
+                                            <?php } ?> 
+                                    </select>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-brief">Description</label>
@@ -87,12 +91,12 @@ include "main/include.php";
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Date of Entry</label>
-									<input type="date" id="add-date" name="patient_dateOfEntry" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
+									<input type="date" id="add-date" name="patient_dateOfEntry" class="form-control datepicker" data-format="mm/dd/yyyy" value="" required>
 								</div>
 							</div>
 							<div class="col-xs-12">
 								<button type="submit" class="btn btn-primary" name="save-patient">Save</button>
-								<button type="button" class="btn" name="cancel">Cancel</button>
+								<!-- <button type="button" class="btn" name="cancel">Cancel</button> -->
 							</div>
 						</form>
 					</div>

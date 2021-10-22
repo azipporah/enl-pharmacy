@@ -17,13 +17,13 @@ include "assets/header.php";
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Add Dosage</h4>
+                    <h4>Add Disease</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Dosage</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Dosage</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Disease</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Disease</a></li>
                 </ol>
             </div>
         </div>
@@ -37,14 +37,22 @@ include "assets/header.php";
                         <form action="#" method="post">
                             <div class="col-xs-12 row">
                                 <div class="form-group col-sm-6">
-                                    <label class="form-label" for="add-date">Product Dose name</label>
-                                    <input type="text" class="form-control" id="add-unit" name="dose" required>
+                                    <label class="form-label" for="add-date">Disease name</label>
+                                    <input type="text" class="form-control" id="add-unit" name="disease" required>
                                 </div>
-
+                                <div class="form-group col-sm-6">
+									<label class="form-label" for="add-gender">Gender Affected</label>
+									<select class="form-control" name="gender_affected" required>
+										<option></option>
+                                        <option>All</option>
+										<option>Male</option>
+										<option>Female</option>
+									</select>
+								</div>
                             </div>
                             <div class="col-xs-12">
-                                <button type="submit" class="btn btn-primary" name="save-dose">Save</button>
-                                <!-- <button type="button" class="btn" name="cancel">Cancel</button>/ -->
+                                <button type="submit" class="btn btn-primary" name="save-disease">Save</button>
+                                <!-- <button type="button" class="btn" name="cancel">Cancel</button> -->
                             </div>
                         </form>
                     </div>

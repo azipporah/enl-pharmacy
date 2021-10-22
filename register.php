@@ -1,6 +1,45 @@
 <?php
 error_reporting(0);
 include "main/include.php";
+
+//adding user into website
+// include "config/connect.php";
+// error_reporting(0);
+// if (isset($_SESSION['username'])) {
+//     header("Location: index.php");
+// }
+
+// if (isset($_POST['register'])) {
+//     $username = $_POST['username'];
+//     $email = $_POST['email'];
+//     $password = $_POST['password'];
+//     $cpassword = $_POST['cpassword'];
+
+//     if ($password == $cpassword) {
+//         $get_user = "SELECT * FROM `user` WHERE `user_email` = '$email' ";
+//         $execute_getUser = mysqli_query($connect, $get_user);
+//         if (!$execute_getUser -> num_rows > 0) {
+//             $insert_user = "INSERT INTO `user`(`user_email`, `user_name`, `user_password`) 
+//              VALUES ('$email','$username','$password')";
+
+//             $execute_userInsert = mysqli_query($connect, $insert_user);
+//             if ($execute_userInsert) {
+//                 echo "Wow!, user registration successful!";
+//                 $email = "";
+//                 $username = "";
+//                 $_POST['password'] = "";
+//                 $_POST['cpassword'] = "";
+//             } else {
+//                 echo "Ooops!, something went wrong!";
+//             }
+//         }else {
+//             echo "Ooops!, user email already exists!";
+//         }
+//     } else {
+//         echo "Password is Not matched!";
+//     }
+// }
+
 ?>
 
 
@@ -34,15 +73,15 @@ include "main/include.php";
                                     <form action="" method="POST">
                                         <div class="form-group">
                                             <label><strong>Username</strong></label>
-                                            <input type="text" name="username" value="<?php echo $username; ?>" class="form-control" placeholder="username">
+                                            <input type="text" name="user_name" value="<?php echo $username; ?>" class="form-control" placeholder="username">
                                         </div>
                                         <div class="form-group">
                                             <label><strong>Email</strong></label>
-                                            <input type="email" name="email" value="<?php echo $email; ?>" class="form-control" placeholder="hello@example.com">
+                                            <input type="email" name="user_email" value="<?php echo $email; ?>" class="form-control" placeholder="hello@example.com">
                                         </div>
                                         <div class="form-group">
                                             <label><strong>Password</strong></label>
-                                            <input type="password" name="password" value="<?php echo $_POST['password']; ?>" class="form-control">
+                                            <input type="password" name="user_password" value="<?php echo $_POST['password']; ?>" class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label><strong>Confirm Password</strong></label>

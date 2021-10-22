@@ -1,6 +1,6 @@
 <?php 
 include "assets/header.php";
-include "main/include.php";
+// include "main/include.php";
 ?>
 <!--**********************************
             Content body start
@@ -43,7 +43,7 @@ include "main/include.php";
 							</div>
 							<div class="col-xs-12">
 								<button type="submit" class="btn btn-primary" name="save-pcat">Save</button>
-								<button type="button" class="btn" name="cancel">Cancel</button>
+								<!-- <button type="button" class="btn" name="cancel">Cancel</button> -->
 							</div>
 						</form>
 					</div>

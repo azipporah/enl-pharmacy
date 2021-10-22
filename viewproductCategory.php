@@ -37,7 +37,7 @@
 
 if(isset($_POST['update-record'])){
   //echo working
-  @$productCategory_id =$_POST['productCategory_id'];
+  // $productCategory_id =$_POST['productCategory_id'];
   $productCategory_name=$_POST['productCategory_name'];
   
   
@@ -106,8 +106,8 @@ $sql_query=mysqli_query($connect, $sql_fetch);
     <tr>
      <td><?php echo $rows['productCategory_id'];?></td>  
     <td><?php echo $rows['productCategory_name'];?></td>
-     <td><a href="?delete=<?php echo $rows['productCategory_id'];?>">Delete</a></td>
-    <td><a href="?update=<?php echo $rows['productCategory_id'];?>">Update</a></td>
+     <td><a href="?delete=<?php echo $rows['productCategory_id'];?>" class="badge badge-danger">Delete</a></td>
+    <td><a href="?update=<?php echo $rows['productCategory_id'];?>" class="badge badge-primary">Update</a></td>
     </tr>
         
    
@@ -156,7 +156,7 @@ $sql_query=mysqli_query($connect, $sql_fetch);
 </table>
      <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">DexignZone</a> 2020</p>
+            <p>Copyright © Designed &amp; Developed by Computing Palace Technologies 2021</p>
             </div>
         </div>
 </body>

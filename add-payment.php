@@ -1,6 +1,6 @@
 <?php 
 include "assets/header.php";
-include "main/include.php";
+// include "main/include.php";
 ?>
 
 <!--**********************************
@@ -71,7 +71,7 @@ echo $Error;
 							</div>
 							<div class="col-xs-12">
 								<button type="submit" class="btn btn-primary" name="save-payment">Save</button>
-								<button type="button" class="btn" name="cancel">Cancel</button>
+								<!-- <button type="button" class="btn" name="cancel">Cancel</button> -->
 							</div>
 						</form>
 					</div>

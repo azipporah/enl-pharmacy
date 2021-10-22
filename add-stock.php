@@ -1,6 +1,6 @@
 <?php 
 include "assets/header.php";
-include "main/include.php";
+// include "main/include.php";
 ?>
 <!--**********************************
             Content body start
@@ -96,23 +96,27 @@ include "main/include.php";
                                     </select>
 								</div>
 								<div class="form-group col-sm-6">
+									<label class="form-label" for="add-qnty">Unit price</label>
+									<input type="text" class="form-control" id="add-qnty" name="unit_price">
+								</div>
+								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Stock quantity</label>
 									<input type="text" class="form-control" id="add-stockqnty" name="stock-qnty">
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Stock expiry date</label>
-									<input type="date" id="add-date" name="stock-expiry" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
+									<input type="date" id="add-date" name="stock_expiry" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-name">Stock Description</label>
-									<input type="text-area" class="form-control" id="add-stockdesc" name="stock-desc">
+									<input type="text-area" class="form-control" id="add-stockdesc" name="stock_desc">
 								</div>
 
 
 							</div>
 							<div class="col-xs-12">
 								<button type="submit" class="btn btn-primary" name="save-stock">Save</button>
-								<button type="button" class="btn" name="cancel">Cancel</button>
+								<!-- <button type="button" class="btn" name="cancel">Cancel</button> -->
 							</div>
 						</form>
 					</div>

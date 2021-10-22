@@ -8,5 +8,6 @@
     
     if(!$connect) {
         die ("DB connection failed:" . mysqli_connect_error());
+        // $error =  "db not connected";
     }
 ?>

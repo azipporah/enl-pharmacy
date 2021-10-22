@@ -1,6 +1,6 @@
 <?php 
 include "assets/header.php";
-include "main/include.php";
+// include "main/include.php";
 ?>
 
 <!--**********************************
@@ -38,7 +38,7 @@ include "main/include.php";
 							<div class="col-xs-12 row">
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Patient name</label>
-									<select class="form-control" name="pname">
+									<select class="form-control" name="pname" required>
 										<option value="">Select</option>
 										<?php
 										include 'config/connect.php';
@@ -53,13 +53,13 @@ include "main/include.php";
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Date of Appointment</label>
-									<input type="date" id="add-date" name="doa" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
+									<input type="date" id="add-date" name="doa" class="form-control datepicker" data-format="mm/dd/yyyy" value="" required>
 								</div>
 
 							</div>
 							<div class="col-xs-12">
 								<button type="submit" class="btn btn-primary" name="save-appointment">Save</button>
-								<button type="button" class="btn" name="cancel">Cancel</button>
+								<!-- <button type="button" class="btn" name="cancel">Cancel</button> -->
 							</div>
 						</form>
 					</div>

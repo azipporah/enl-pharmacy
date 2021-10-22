@@ -3,7 +3,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">DexignZone</a> 2020</p>
+                <p>Copyright © Designed &amp; Developed by Computing Palace Technologies 2021</p>
             </div>
         </div>
         <!--**********************************

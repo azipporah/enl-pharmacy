@@ -1,6 +1,6 @@
 <?php 
 include "assets/header.php";
-include "main/include.php";
+// include "main/include.php";
 ?>
 <!--**********************************
             Content body start
@@ -73,18 +73,18 @@ include "main/include.php";
 									<label class="form-label" for="add-date">End date</label>
 									<input type="date" id="add-date" name="end-date" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
 								</div>
-								<div class="form-group col-sm-6">
+								<!-- <div class="form-group col-sm-6">
 									<label class="form-label" for="add-tstatus">Treatment status</label>
-									<select class="form-control" name="t-status">
+									<select class="form-control" name="treatment_status">
 										<option></option>
 										<option>On-going</option>
 										<option>Completed</option>
 									</select>
-								</div>
+								</div> -->
 							</div>
 							<div class="col-xs-12">
 								<button type="submit" class="btn btn-primary" name="save-treatment">Save</button>
-								<button type="button" class="btn" name="cancel">Cancel</button>
+								<!-- <button type="button" class="btn" name="cancel">Cancel</button> -->
 							</div>
 						</form>
 					</div>

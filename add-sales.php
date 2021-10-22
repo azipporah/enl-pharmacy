@@ -1,6 +1,7 @@
 <?php 
 include "assets/header.php";
-include "main/include.php";
+// include "main/include.php";
+
 ?>
 
 <!--**********************************
@@ -113,24 +114,29 @@ include "main/include.php";
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-qnty">Unit price</label>
-									<input type="text" class="form-control" id="add-qnty" name="unit-price">
+									<select class="form-control" name="unit_price">
+										<option value="">Select</option>
+										<?php
+										include 'config/connect.php';
+										$get_unitPrice = mysqli_query($connect, "SELECT * FROM `stock` WHERE 1");
+										while ($unitPrice_fetch = mysqli_fetch_assoc($get_unitPrice)) {
+										?>
+											<option value="<?php echo $unitPrice_fetch['stock_id']; ?>">
+												<?php echo ucwords(strtolower($unitPrice_fetch['unit_price'])); ?>
+											</option>
+										<?php } ?>
+									</select>
 								</div>
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-qnty">Quantity</label>
 									<input type="text" class="form-control" id="add-qnty" name="quantity">
 								</div>
-								<div class="form-group col-sm-6">
-									<label class="form-label" for="add-name">Total amount</label>
-									<input type="text" class="form-control" id="add-amount" name="tamount">
-								</div>
+								
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Paid amount</label>
 									<input type="text" class="form-control" id="add-pamount" name="pamount">
 								</div>
-								<div class="form-group col-sm-6">
-									<label class="form-label" for="add-date">Remaining amount</label>
-									<input type="text" class="form-control" id="add-ramount" name="ramount">
-								</div>
+								
 								<div class="form-group col-sm-6">
 									<label class="form-label" for="add-date">Date of Sale</label>
 									<input type="date" id="add-date" name="dos" class="form-control datepicker" data-format="mm/dd/yyyy" value="">
@@ -139,7 +145,7 @@ include "main/include.php";
 							</div>
 							<div class="col-xs-12">
 								<button type="submit" class="btn btn-primary" name="save-sales">Save</button>
-								<button type="button" class="btn" name="cancel">Cancel</button>
+								<!-- <button type="button" class="btn" name="cancel">Cancel</button> -->
 							</div>
 						</form>
 					</div>

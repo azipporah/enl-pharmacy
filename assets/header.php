@@ -1,4 +1,7 @@
-<?php include "main/include.php"; ?>
+<?php
+// include "config/connect.php"; 
+include "main/include.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,10 +52,11 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
+            <a href="enl.php" class="brand-logo">
                 <img class="logo-abbr" src="images/enlLogo.png" alt="">
-                <img class="logo-compact" src="images/logo-text-white.png" alt="">
-                <img class="brand-title" src="images/logo-text-white.png" alt="">
+                <!-- <img class="logo-compact" src="images/logo-text-white.png" alt=""> -->
+                <h4 style="color: white;">EARTH NATURAL LIFE LIMITED</h4>
+                <!-- <img class="brand-title" src="images/logo-text-white.png" alt=""> -->
             </a>
 
             <div class="nav-control">
@@ -74,27 +78,27 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="search_bar dropdown">
-                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+                                <!-- <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
                                     <i class="mdi mdi-magnify"></i>
                                 </span>
                                 <div class="dropdown-menu p-0 m-0">
                                     <form>
-                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                        <input class="form-control" style="margin-left:14px; margin-top:0px;" type="search" placeholder="Search" aria-label="Search">
                                     </form>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
                         <ul class="navbar-nav header-right">
                             <li class="nav-item dropdown notification_dropdown">
-                                <a class="nav-link bell ai-icon" href="#" role="button" data-toggle="dropdown">
+                                <!-- <a class="nav-link bell ai-icon" href="#" role="button" data-toggle="dropdown">
                                     <svg id="icon-user" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
                                         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                                         <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                                     </svg>
                                     <div class="pulse-css"></div>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
+                                </a> -->
+                                <!-- <div class="dropdown-menu dropdown-menu-right">
                                     <ul class="list-unstyled">
                                         <li class="media dropdown-item">
                                             <span class="success"><i class="ti-user"></i></span>
@@ -146,14 +150,14 @@
                                         </li>
                                     </ul>
                                     <a class="all-notification" href="#">See all notifications <i class="ti-arrow-right"></i></a>
-                                </div>
+                                </div> -->
                             </li>
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
                                     <img src="images/profile/pic1.jpg" width="20" alt="" />
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="app-profile.html" class="dropdown-item ai-icon">
+                                    <!-- <a href="app-profile.html" class="dropdown-item ai-icon">
                                         <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
                                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                             <circle cx="12" cy="7" r="4"></circle>
@@ -166,7 +170,7 @@
                                             <polyline points="22,6 12,13 2,6"></polyline>
                                         </svg>
                                         <span class="ml-2">Inbox </span>
-                                    </a>
+                                    </a> -->
                                     <a href="page-login.html" class="dropdown-item ai-icon">
                                         <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
                                             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
@@ -223,6 +227,19 @@
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <svg id="icon-user-doctors" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span class="nav-text">Diseases</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="viewdisease.php">All Diseases</a></li>
+                            <li><a href="add-disease.php">Add Disease</a></li>
+                            <!-- <li><a href="doctor-profile.html">Employee Profile</a></li> -->
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <svg id="icon-users" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
                                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                 <circle cx="9" cy="7" r="4"></circle>
@@ -235,6 +252,21 @@
                             <li><a href="viewpatient.php">All Patients</a></li>
                             <li><a href="add-patient.php">Add Patient</a></li>
                             <!-- <li><a href="edit-patient.html">Edit Patient</a></li> -->
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <svg id="icon-file-text" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span class="nav-text">Appointments</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="viewappointment.php">All Appointments</a></li>
+                            <li><a href="add-appointment.php">Add Appointment</a></li>
                         </ul>
                     </li>                    
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -253,22 +285,6 @@
                             <!-- <li><a href="patient-profile.html">Patient Profile</a></li> -->
                         </ul>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <svg id="icon-file-text" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                            <span class="nav-text">Appointments</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="viewappointment.php">All Appointments</a></li>
-                            <li><a href="add-appointment.php">Add Appointment</a></li>
-                        </ul>
-                    </li>
-                    
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <svg id="icon-database" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
                                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
