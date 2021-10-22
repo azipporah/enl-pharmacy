@@ -43,11 +43,11 @@ function validateForm() {
                                     <form action="#" id="form1" name="myForm" onsubmit="return validateForm()"  method="post">
                                         <div class="form-group">
                                             <label><strong>Email</strong></label>
-                                            <input type="email" name="employee_email" class="form-control" value="example@gmail.com" >
+                                            <input type="email" name="employee_email" class="form-control" placeholder="example@gmail.com" >
                                         </div>
                                         <div class="form-group">
                                             <label><strong>Password</strong></label>
-                                            <input type="password" name="employee_password" class="form-control" value="password">
+                                            <input type="password" name="employee_password" class="form-control" placeholder="password">
                                         </div>
                                         <!-- <div class="form-row d-flex justify-content-between mt-4 mb-2">
                                             <div class="form-group">

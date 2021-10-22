@@ -1,5 +1,5 @@
 <?php
-// include "config/connect.php"; 
+// ini_set('memory_limit', '-1');// for solving the error of memory limit
 include "main/include.php";
 ?>
 
